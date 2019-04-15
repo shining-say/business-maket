@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<meta charset="UTF-8">
+	<title>maket-one</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+	<header>
+		<section id="header-top">
+			<div class="container flex space-between">
+				<div class="logo">
+					<strong>Business</strong>
+					<span>Company</span>
+				</div>
+					<div class="header-contacts">
+						<h4>Need Help?</h4>
+							<div class="phone">
+								<img src="./images/Mob.png" alt="">
+								<strong>800-2345-6789</strong>	
+							</div>
+								<div class="hours">
+									<small>
+									<strong>Hours:</strong>
+									6am-4pm PST M-Th;   6am-3pm PST Fri
+									</small>
+								</div>
+					</div>
+			</div>
+		</section>
+		<section id="header-nav">
+			<div class="container flex space-between align-center">
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="02_about.html">About</a></li>
+						<li>
+							<a href="03_services.html">Services</a>
+							<ul>
+								<li><a href="#">Loren ipsum</a></li>
+								<li><a href="#">Dolor sit amet</a></li>
+								<li>
+									<a href="#">Conce cletur</a>
+									<ul>
+										<li><a href="07_404page.html">Archive</a></li>
+										<li><a href="06_privacy policy.html">Privacy policy</a></li>										
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="04_projects.html">Projects</a></li>
+						<li><a class="active" href="#">Contacts</a></li>
+					</ul>
+				</nav>
+				<div class="header-search">
+					<input type="text">
+					<i></i>
+				</div>
+			</div>
+		</section>	
+	</header>
+	<main>
+		<section id="map">
+			<div class="map">
+	   		 	<script>
+	           	var map, infoWindow;
+	     		function initMap() {
+	        		map = new google.maps.Map(document.getElementById('map'), {
+	         		 center: {lat: -34.397, lng: 150.644},
+	          		zoom: 6
+	        		});
+	       		infoWindow = new google.maps.InfoWindow;
+	        	if (navigator.geolocation) {
+	          	navigator.geolocation.getCurrentPosition(function(position) {
+	            var pos = {
+	             	lat: position.coords.latitude,
+	              	lng: position.coords.longitude
+	            };
+
+	           		infoWindow.setPosition(pos);
+	            	infoWindow.setContent('Location found.');
+	            	infoWindow.open(map);
+	            	map.setCenter(pos);
+	         	}, 
+	          	function() {
+	            handleLocationError(true, infoWindow, map.getCenter());
+	          	});
+	        	} else {
+	          		// Browser doesn't support Geolocation
+	          	handleLocationError(false, infoWindow, map.getCenter());
+	        		}
+	      		}
+				function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+	        		infoWindow.setPosition(pos);
+	        		infoWindow.setContent(browserHasGeolocation ?
+	                              'Error: The Geolocation service failed.' :
+	                              'Error: Your browser doesn\'t support geolocation.');
+	       			 infoWindow.open(map);
+	     		 }
+	    		</script>
+	    			<script async defer
+	    				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5f6Igss8F24jIvxVMn2R3h4EQlmXirBU&callback=initMap">
+	    			</script>
+	   		</div>
+	   	</section>	  
+		<section id="contact-form">
+			<div class="container">
+				<h2><strong>CONTACT</strong> FORM</h2>	
+				<div class="row">			
+					<div class="col-md-12">
+						<form method="get">
+			                <input type="text" name="name" placeholder="Name:" value=""/>
+			                <input type="text" name="phone" placeholder="Phone:" value=""/>  
+			                <input type="text" name="email" placeholder="Email:" value=""/>    
+			                <textarea name="message" placeholder="Message"></textarea>    	
+			                <div class="btn-wr text-primary">   
+			                	<a href="07_404page.html" class="btn btn-primary" data-type="submit">Submit comment</a>   
+			                </div> 	         	
+			        	</form> 
+			        </div>	 
+		        </div>	  	
+			</div>	
+	    </section>    
+	</main>	
+		<footer> Business Company  &#169;2019  
+            <a href="06_privacy policy.html">Privacy Policy</a>
+        </footer> 
+
+</body>
+</html>
+
+
+
+
+
+
